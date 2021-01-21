@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script type="text/javascript">
+    let spec = { "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "config": { "view": { "continuousHeight": 300, "continuousWidth": 400 } }, "data": { "format": { "feature": "countries", "type": "topojson" }, "url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json" }, "height": 300, "mark": { "fill": "#2a1d0c", "stroke": "#706545", "strokeWidth": 0.5, "type": "geoshape" }, "projection": { "scale": 400, "translate": [ 700, 350 ], "type": "mercator" }, "width": 300 };
+    let opt = {"renderer": "canvas", "actions": false};
+    vegaEmbed("#vis", spec, opt);
+  </script>
+</body>
+</html>

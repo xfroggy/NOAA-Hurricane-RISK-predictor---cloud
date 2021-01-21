@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+{% set spec2 = map_storms %}
+
+<!--
+
+<script src="https://cdn.jsdelivr.net/npm/vega@{vega_version}"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@{vegalite_version}"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@{vegaembed_version}"></script>
+-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>   
+<h2>{{prediction.location}}</h2>
+<h2>Latitude: {{prediction.location.latitude}} | Longitude: {{prediction.location.longitude}}</h2>
+
+<div class="container">
+<div class="row">
+    <div class="column">
+        <div class = "brown-column">Hurricanes that have hit this location since 1851:</div>
+        <div class = "brown-column">Total hurricanes since 1851:</div>
+        <div class = "brown-column">Probability of occurrence (actual / total possible) of a hurricane at this location:</div>
+        <div class = "brown-column">here rank of this probability of occurrence is:</div>
+        <div class = "brown-column">RISK for this location is:</div>    
+    </div>
+    <div class="column">
+        <div class = "white-column"><strong>{{prediction.total_hits}}</strong></div>
+        <div class = "white-column"><strong>{{prediction.total_num_hu}}</strong></div>
+        <div class = "white-column"><strong>{{prediction.PoC}}</strong></div>
+        <div class = "white-column"><strong>{{prediction.rank}}</strong></div>
+        <div class = "white-column"><strong>{{prediction.risk}}</strong></div>    
+    </div>
+</div>
+</div>
+<div class="container"></civ>
+    <div id="vis"></div>
+    <script type="text/javascript">
+        let spec = JSON.parse({{prediction.map_of_storms | tojson | safe}});
+        let opt = {"renderer": "canvas", "actions": false};
+        vegaEmbed("#vis", spec, opt);
+     </script>
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,205 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+html {
+    height:100%;
+}
+body {
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(to bottom right, rgb(238, 203, 174) 0%, rgba(195,104,13,1) 100%);   
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+    flex-direction:column;
+}
+
+circle-body {
+     background: radial-gradient(circle, rgb(238, 203, 174) 0%, rgba(195,104,13,1) 100%);   
+}
+
+h1 {    
+    padding-top: 0;
+    padding-bottom: 5px;
+    border-bottom: none;
+    font-family: 'Roboto', sans-serif;    
+    font-size: 4em;
+    text-transform: uppercase;
+    text-align: center;
+    color:rgb(121, 74, 30);
+    }
+
+h2 {
+    display: flex;
+    justify-content: center;
+    color:#097054;
+    padding-top: 0;
+    padding-bottom: 5px;
+    border-bottom: none;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 3.5em;
+    text-transform: uppercase;
+    font-weight: 100;
+   }
+
+.item{
+    color: white;;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    
+    }
+
+#location, #radius, #impact {
+    margin: 5px 0px 30px 0px;
+}
+
+
+a {    
+    
+    color:white;;
+    padding: 18px;
+    font-weight: 100;
+    text-transform: lowercase;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 3.5em;
+    text-decoration: none;
+
+  }
+
+a:hover {
+    
+    text-transform: uppercase;
+}
+
+optgroup {font-size: 1.5em}
+
+.container{
+    display: flex;
+    justify-content: center;    
+    color:rgb(121, 74, 30);
+    font-family: 'Roboto', sans-serif; 
+    font-size: 1.5em;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    justify-content: center;
+    
+}
+
+.column {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex:1;
+}
+
+.brown-column {
+    padding: 5px 10px;
+    color:rgb(121, 74, 30);
+   
+    text-align: right;
+    
+    
+}
+
+.white-column {
+    color: white;
+    
+    padding:5px 10px;
+    
+}
+.input-form input[type="text"] {
+    display: block;
+    margin: 2px;
+    padding: 5px;
+    width: 100%;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 1.5em;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    box-sizing: border-box;
+    }
+    
+    ::-webkit-input-placeholder {
+    color: #e2d8d7;
+    font-style: italic;
+    }
+    
+    :-moz-placeholder { /* Firefox 18- */
+    color: #e2d8d7;
+    font-style: italic;
+    }
+    
+    ::-moz-placeholder {  /* Firefox 19+ */
+    color: #e2d8d7;
+    font-style: italic;
+    }
+    
+    :-ms-input-placeholder {
+    color: #e2d8d7;
+    font-style: italic;
+    }   
+    
+    .input-form input[type="text"]:focus {
+    outline: none;
+    border: 2px solid rgb(121, 74, 30);
+    border-radius: 10px;
+    
+}    
+input[type="text"] {
+    display: block;
+    margin: 2px;
+    padding: 5px;
+    width: 25%;
+    font-family: 'Lora';
+    font-size: 1.5em;
+    border: 2px solid white;
+    border-radius: 10px;
+    background: transparent;
+    color: white;
+    box-sizing: border-box;
+    }
+      
+      
+
+.submit-button {
+    font-size: 1em;
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #60a3bc;
+    padding: 20px;
+    border-radius: 50px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    }
+
+.submit-button:hover {
+    text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+    }    
+
+.submit-button:focus {
+    outline:none;
+}    
+
+.error {
+    color: red;
+    font-style: italic;
+} 

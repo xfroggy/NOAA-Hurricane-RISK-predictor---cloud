@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>   
+<h2>{{prediction.location}}</h2>
+<h2>Latitude: {{prediction.location.latitude}} | Longitude: {{prediction.location.longitude}}</h2>
+
+<div class="container">
+<div class = "row">
+    <table id = "hurricanes">
+        <tr>
+            <td><div class="brown-column">Hurricanes that have hit this location since 1851:</div></td>
+            <td><div class="white-column"><strong>{{prediction.total_hits}}</strong></div></td>
+        </tr>
+        <tr>
+            <td><div class="brown-column">Total hurricanes since 1851:</div></td>
+            <td><div class="white-column"><strong>{{prediction.total_num_hu}}</strong></div></td>
+        </tr>   
+        <tr>
+            <td><div class="brown-column">Probability of occurrence (actual / total possible) of a hurricane at this location:</div></td>
+            <td><div class="white-column"><strong>{{prediction.PoC}}</strong></div></td>
+        </tr>  
+        <tr>
+            <td><div class="brown-column">Rank of this probability of occurrence is:</div></td>
+            <td><div class="white-column"><strong>{{prediction.rank}}</strong></div></td>
+        </tr> 
+        <tr>
+            <td><div class="brown-column">RISK for this location is:</div></td>
+            <td><div class="white-column"><strong>{{prediction.risk}}</strong></div> </td>
+        </tr>         
+    </table>
+</div>
+</div>
+<div class= "container">
+<div class = "row">
+<div id="vis"></div>
+    <script type="text/javascript">
+        let spec = JSON.parse({{prediction.map_of_storms | tojson | safe}});
+        let opt = {"renderer": "canvas", "actions": false};
+        vegaEmbed("#vis", spec, opt);
+     </script>
+</div>
+</div>
+
+
+
+
+{% endblock %}

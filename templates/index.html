@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class= "container">
+<form class= "input-form" action="/" method="post">
+  <label for="location">Enter location: </label>
+  <input id = "location" type="text" name="location" placeholder="City, State or Zip" required />
+  <label for="radius">Radius (in miles) from your center coordinate to check for hits: </label>
+  <input id = "radius" type = "text" name = "radius" required>
+  <label for="impact">Enter impact: </label>
+  <select name="impact" id = "impact">
+    <option value = "1">1</option>
+    <option value = "2">2</option>
+    <option value = "3">3</option>
+    <option value = "4">4</option>
+    <option value = "5">5</option>
+  </select>  
+  <br>  
+  <div class ="button_cont" align="center">
+  <input class = "submit-button" type="submit" />
+  </div>
+</form>
+</div>
+{% endblock %}
